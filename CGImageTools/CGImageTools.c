@@ -70,7 +70,8 @@ CGImageRef CGImageFlip(CGImageRef image, CGImageFlipDirection flipDirection){
     
     switch (flipDirection) {
         case CGImageFlipDirectionNone:
-            return CFRetain(image);
+            CFRetain(image);
+            return image;
         case CGImageFlipDirectionHorizontal:
             transform = CGAffineTransformMakeScale(- 1.0f, 1.0f);
             rect = CGRectMake(- imageWidth, .0f, imageWidth, imageHeight);
